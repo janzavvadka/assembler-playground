@@ -1,0 +1,3 @@
+#/usr/bin/env bash
+
+complete -W "init edit build delete run" amt

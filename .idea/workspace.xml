@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0c900289-a0aa-4178-bfc3-2d2df7df1000" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/amt-config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amt" beforeDir="false" afterPath="$PROJECT_DIR$/amt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/hello" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/hello.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello/hello.o" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>echo $</find>
+      <find>argument_count</find>
+      <find>$1</find>
+      <find>if[ -p</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>ARGUMENT_COUNT</replace>
+      <replace>PROJECT_NAME</replace>
+      <replace>$PROJECT_NAME</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578686489195" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0c900289-a0aa-4178-bfc3-2d2df7df1000" name="Default Changelist" comment="" />
+      <created>1578675665580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578675665580</updated>
+      <workItem from="1578675666970" duration="2032000" />
+      <workItem from="1578680249886" duration="31000" />
+      <workItem from="1578680319598" duration="6034000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="59" y="116" width="1488" height="872" key="MergeDialog" timestamp="1579979884539">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="59" y="116" width="1488" height="872" key="MergeDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1579979884539" />
+    <state x="230" y="260" width="578" height="584" key="MultipleFileMergeDialog" timestamp="1579979889060">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="230" y="260" width="578" height="584" key="MultipleFileMergeDialog/59.27.1861.1053@59.27.1861.1053" timestamp="1579979889060" />
+    <state x="187" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1579979861039">
+      <screen x="59" y="27" width="1861" height="1053" />
+    </state>
+    <state x="187" y="257" width="672" height="678" key="search.everywhere.popup/59.27.1861.1053@59.27.1861.1053" timestamp="1579979861039" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

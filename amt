@@ -1,0 +1,141 @@
+#!/bin/bash
+
+#======== Config ===========#
+
+source .amt-config
+
+#======== Variables ========#
+
+ARGUMENT_COUNT=$#
+PROJECT_NAME=$1
+PROJECTS_PATH=projects
+BUILD_PATH=$PROJECTS_PATH/$PROJECT_NAME/build/
+SRC_PATH=$PROJECTS_PATH/$PROJECT_NAME/src/
+PROJECT_PATH=$PROJECTS_PATH/$PROJECT_NAME/
+
+#========= Usage ===========#
+
+usage() {
+    echo "usage: ./amt [PROJECT_NAME] [OPERATIONS] "
+    echo ""
+    echo "[OPERATIONS]:"
+    echo "init - create new assembler project with given name"
+    echo "edit - edit assembler project by name in customizable editor"
+    echo "build - build assembler project by name"
+    echo "delete - delete assembler project by name"
+    echo "run - run assembler project by name"
+    echo "init edit build run"
+    echo ""
+    echo "configuration in .amt-config file"
+    exit 1
+}
+
+#========= Asserts ==========#
+
+assertProjectExist() {
+    if [[ ! -d $PROJECTS_PATH/$PROJECT_NAME ]]; then
+        echo 'ERROR: project not exist'
+        echo ''
+        usage
+        exit 1
+    fi
+}
+
+assertProjectNotExist() {
+    if [[ -d $PROJECTS_PATH/$PROJECT_NAME ]]; then
+        echo 'ERROR: project already exist'
+        echo ''
+        usage
+        exit 1
+    fi
+}
+
+#======== Function =========#
+
+init() {
+    assertProjectNotExist
+    mkdir -p $SRC_PATH
+    mkdir $BUILD_PATH
+    touch $SRC_PATH/$PROJECT_NAME.asm
+    if [[ ! -d $PROJECTS_PATH ]]; then
+        mkdir $PROJECTS_PATH
+    fi
+}
+
+edit() {
+    assertProjectExist
+    $text_editor $SRC_PATH/$PROJECT_NAME.asm
+}
+
+build() {
+    assertProjectExist
+    nasm -f elf64 -o $BUILD_PATH/$PROJECT_NAME.o $SRC_PATH/$PROJECT_NAME.asm
+    ld $BUILD_PATH/$PROJECT_NAME.o -o $PROJECT_PATH/$PROJECT_NAME
+}
+
+run() {
+    assertProjectExist
+    ./$PROJECT_PATH/$PROJECT_NAME
+}
+
+delete() {
+    assertProjectExist
+    rm -r $PROJECTS_PATH/$PROJECT_NAME
+}
+
+list() {
+    ls projects
+}
+
+#===== AutoComplete Init ====#
+if [ ! -f /etc/bash_completion.d/amt-autocomplete ] ; then
+  echo "istnieje"
+  sudo cp .amt-autocomplete /etc/bash_completion.d/
+  sudo mv /etc/bash_completion.d/.amt-autocomplete /etc/bash_completion.d/amt-autocomplete
+  if ! grep -qnr "#Amt-Autocomplete" ~/.bashrc; then
+    echo "" >> ~/.bashrc
+    echo "#Amt-Autocomplete" >> ~/.bashrc
+    echo "if [ -a "/etc/bash_completion.d/amt-autocomplete" ]; then" >> ~/.bashrc
+    echo "    source /etc/bash_completion.d/amt-cutocomplete" >> ~/.bashrc
+    echo "fi" >> ~/.bashrc
+  fi
+fi
+
+#=========== Main ==========#
+if [[ ! -d $PROJECTS_PATH ]]; then
+    mkdir $PROJECTS_PATH
+fi
+if [[ $2 == 'init' ]]; then
+    init
+    if [[ $3 == 'edit' ]]; then
+        edit
+        if [[ $4 == 'build' ]]; then
+            build
+            if [[ $5 == 'run' ]]; then
+                run
+            fi
+        fi
+    fi
+elif [[ $2 == 'edit' ]]; then
+    edit
+    if [[ $3 == 'build' ]]; then
+        build
+        if [[ $4 == 'run' ]]; then
+            run
+        fi
+        run
+    fi
+elif [[ $2 == 'build' ]]; then
+        build
+    if [[ $3 == 'run' ]]; then
+        run
+    fi
+elif [[ $2 == 'run' ]]; then
+    run
+elif [[ $2 == 'delete' ]]; then
+    delete
+elif [[ $1 == 'list' ]]; then
+    list
+else
+    usage
+fi
